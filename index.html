@@ -124,16 +124,23 @@
 <body class="theme-pink">
 
   
-<!-- Botão flutuante WhatsApp -->
-<a href=""
+<!-- 🔹 Botão flutuante + texto dica -->
+<!-- 🔹 Botão flutuante + texto de dica -->
+<div id="whatsapp-float"
+     class="fixed bottom-5 right-5 flex items-center gap-2 opacity-0 invisible transition-opacity duration-700 z-[9999]">
+  <div id="whatsapp-hint"
+       class="bg-white text-gray-800 text-sm px-3 py-2 rounded-xl shadow-md animate-bounce max-w-[200px] md:hidden">
+    Se não conseguir entrar no grupo, clique aqui =>
+  </div>
 
-   class="link-direto whatsapp-float text-center"
-   target="_blank"
-   rel="noopener"
-   aria-label="Clique aqui se não conseguiu entrar no grupo"
-   >
-  <span>Clique aqui se não conseguiu entrar no grupo</span>
-</a>
+  <a id="whatsapp-btn"
+     target="_blank"
+     rel="noopener"
+     aria-label="Falar no WhatsApp"
+     class="flex items-center justify-center w-14 h-14 bg-[#f97316] rounded-full shadow-lg hover:scale-110 transition-transform duration-200">
+    <img src="./img/whatsapp.svg" alt="WhatsApp" width="34" height="34">
+  </a>
+</div>
 
 
 
