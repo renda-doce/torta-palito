@@ -13,26 +13,42 @@ document.querySelectorAll('.link-group').forEach(a => {
 });
 
 
+document.querySelectorAll('.tip-link-direto').forEach(a => {
+    a.addEventListener('click', (e) => {
+        e.preventDefault();
+
+        // smooth micro-animation
+        document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+        setTimeout(() => window.open(link_direto, '_blank'), 600);
+    });
+});
+
+document.querySelector('#link-politica-privacidade').addEventListener('click', (e) => {
+        document.querySelector('#politica-privacidade').classList.remove('hidden');
+});
+
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Link configurável
-  const floatContainer = document.getElementById('whatsapp-float');
-  const hint = document.getElementById('whatsapp-hint');
-  const btn = document.getElementById('whatsapp-btn');
+    // Link configurável
+    const hint = document.getElementById('whatsapp-hint');
+    const btn = document.getElementById('whatsapp-btn');
 
-  // Define link dinamicamente
-  btn.href = link_direto;
+    // Define link dinamicamente
+    btn.href = link_direto;
 
-  // Mostra o botão e o texto após 5s
-  setTimeout(() => {
-    floatContainer.classList.remove('opacity-0', 'invisible');
-    floatContainer.classList.add('opacity-100', 'visible');
-  }, 5000);
+    // Mostra o botão e o texto após 5s
+    setTimeout(() => {
+        hint.classList.remove('opacity-0', 'invisible');
+        btn.classList.remove('opacity-0', 'invisible');
+        hint.classList.add('opacity-100', 'visible');
+        btn.classList.add('opacity-100', 'visible');
+    }, 5000);
 
-  // Remove o texto de dica após 7s
-  setTimeout(() => {
-    if (hint) {
-      hint.classList.add('opacity-0', 'transition-opacity', 'duration-700');
-      setTimeout(() => hint.remove(), 700);
-    }
-  }, 12000);
+    // Remove o texto de dica após 7s
+    setTimeout(() => {
+        if (hint) {
+            hint.classList.add('opacity-0', 'transition-opacity', 'duration-700');
+            setTimeout(() => hint.remove(), 700);
+        }
+    }, 12000);
 });

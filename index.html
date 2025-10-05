@@ -127,17 +127,17 @@
 <!-- 🔹 Botão flutuante + texto dica -->
 <!-- 🔹 Botão flutuante + texto de dica -->
 <div id="whatsapp-float"
-     class="fixed bottom-5 right-5 flex items-center gap-2 opacity-0 invisible transition-opacity duration-700 z-[9999]">
+     class="fixed bottom-5 right-5 flex items-center gap-2 transition-opacity duration-700 z-[9999]">
   <div id="whatsapp-hint"
-       class="bg-white text-gray-800 text-sm px-3 py-2 rounded-xl shadow-md animate-bounce max-w-[200px] md:hidden">
-    Se não conseguir entrar no grupo, clique aqui =>
+       class="bg-white text-gray-800 text-sm px-3 py-2 rounded-xl shadow-md max-w-[200px] md:hidden text-right opacity-0 invisible">
+    Se não conseguir entrar no grupo, fale conosco ▶
   </div>
 
   <a id="whatsapp-btn"
      target="_blank"
      rel="noopener"
      aria-label="Falar no WhatsApp"
-     class="flex items-center justify-center w-14 h-14 bg-[#f97316] rounded-full shadow-lg hover:scale-110 transition-transform duration-200">
+     class="flex items-center justify-center w-14 h-14 bg-[#42f09a] rounded-full shadow-lg hover:scale-110 transition-transform duration-200 opacity-0 invisible">
     <img src="./img/whatsapp.svg" alt="WhatsApp" width="34" height="34">
   </a>
 </div>
@@ -193,11 +193,10 @@
         </div>
 
         <div class="mt-6"><a class="link-group text-center" id="finalCta" href="#whats">Entrar no grupo VIP para participar do Evento</a></div>
+          .
+        <p class="mt-3 muted text-center"><strong>Vagas Limitadas!</strong><br>Entre no grupo clicando no botão acima para receber informações exclusivas.</p>
         <p class="text-sm muted mt-1 text-center">
-        ⚠️ Se o botão não funcionar, <a href="" target="_blank" class="link-direto" style="color: var(--accent)">
-          clique aqui para falar direto conosco</a>.</p>
-        <p class="mt-3 muted">Vagas e informações exclusivas serão enviadas no grupo do WhatsApp.</p>
-
+        ⚠️ Se o botão não funcionar, <a class="link-direto" style="color: var(--accent)"><strong>clique aqui para falar direto conosco</strong></a></p>
       </section>
 
       <aside class="flex flex-col items-center lg:items-end">
@@ -226,25 +225,21 @@
     <div class="mt-8 grid gap-6">
       <article class="card">
         <h4 class="text-xl font-bold">DIA 1</h4>
-        <p class="mt-2 muted">Neste dia eu vou ensinar que existe um tipo de doce que quase ninguém faz — as tortas no
-          palito — e que você pode aproveitar essa chance pra se destacar e ganhar dinheiro com algo diferente e muito
-          lucrativo.</p>
+        <p class="mt-2 muted">No primeiro dia eu vou te apresentar as tortas no palito e como você pode aproveitar essa
+           oportunidade para incluir no seu cardápio essa sobremesa extremamente lucrativa</p>
       </article>
 
       <article class="card">
         <h4 class="text-xl font-bold">DIA 2</h4>
-        <p class="mt-2 muted">Neste dia eu vou ensinar como fazer tortas no palito com sabores que dão água na boca e
-          uma aparência tão bonita que ninguém resiste — tudo pra encantar o cliente e fazer seu trabalho valer mais.
+        <p class="mt-2 muted">No segundo dia, você vai aprender como montar e finalizar uma torta no palito de maneira perfeita
         </p>
       </article>
 
       <article class="card">
         <h4 class="text-xl font-bold">DIA 3</h4>
-        <p class="mt-2 muted">No último dia eu vou te mostrar como ganhar dinheiro de verdade com as tortas no palito —
-          desde colocar o preço certo até vender e lucrar com o que você faz. Também serão abertas as vagas para o novo
-          curso TORTAS NO PALITO.</p>
-        
+        <p class="mt-2 muted">No terceiro dia, teremos uma aula teórica, onde você aprenderá a precificar, vender e lucrar de verdade com as tortas.</p>
       </article>
+      <div class="text-2xl mt-3 text-center">Não perca sua vaga!</div>
       <div class="mt-4"><a class="link-group" href="#whats">Entrar no grupo VIP</a></div>
     </div>
   </section>
@@ -283,12 +278,21 @@
       <h3 class="text-2xl font-extrabold">Pronto para transformar sua renda com tortas no palito?</h3>
       <p class="mt-3 muted">Vagas e informações exclusivas serão enviadas no grupo do WhatsApp.</p>
       <div class="mt-6"><a class="link-group" id="finalCta" href="#whats">Entrar no grupo VIP do WhatsApp</a></div>
+      <p class="text-sm muted mt-1 text-center">
+        ⚠️ Se o botão não funcionar, <a class="link-direto" style="color: var(--accent)"><strong>clique aqui para falar direto conosco</strong></a></p>
+      
     </div>
   </section>
 
-  <footer class="max-w-6xl mx-auto px-6 py-10 muted text-sm text-center">© <span id="year"></span> Ísis Alvarez • Evento
-    gratuito • <a href="#" class="muted">Política de Privacidade</a></footer>
-
+  <footer class="max-w-6xl mx-auto px-6 py-10 muted text-sm text-center">© <span id="year"></span> Renda Doce • <a href="#politica-privacidade" id="link-politica-privacidade">Política de Privacidade</a></footer>
+  <div class="hidden text-sm muted text-justify p-6" id="politica-privacidade">
+      Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, 
+      a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar claramente e 
+      mostrar todas as provas do produto e usamos resultados reais. Nós não vendemos o seu e-mail ou qualquer 
+      informação para terceiros. Jamais fazemos nenhum tipo de spam. Se você tiver alguma dúvida, sinta-se à 
+      vontade para usar o link de contato e falar conosco em horário comercial de Segunda a Sextas das 09h00 ás 
+      19h00. Lemos e respondemos todas as mensagens por ordem de chegada.
+  </div>
   <!-- Placeholder anchor for whats link -->
   <div id="whats" style="display:none"></div>
 

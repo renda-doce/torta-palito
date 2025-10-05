@@ -13,7 +13,8 @@
 
 /* Botão circular */
 .whatsapp-float a {
-  background-color: #f97316;
+  background-color: #42f09a;
+  color: white;
   border-radius: 50%;
   width: 60px;
   height: 60px;
