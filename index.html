@@ -1,79 +1,140 @@
 <!doctype html>
 <html lang="pt-BR">
+
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
   <title>Tortas no Palito — Evento Gratuito</title>
   <!-- Tailwind Play CDN for quick styling (suficiente para protótipo) -->
   <script src="https://cdn.tailwindcss.com"></script>
-  <meta name="description" content="Aprenda a fazer Tortas no Palito com Ísis Alvarez — evento gratuito de 3 dias. Entre no grupo do WhatsApp e garanta sua vaga." />
+  <meta name="description"
+    content="Aprenda a fazer Tortas no Palito com Ísis Alvarez — evento gratuito de 3 dias. Entre no grupo do WhatsApp e garanta sua vaga." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <!-- SwiperJS CDN -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <link rel="stylesheet" href="./css/temas.css" />
   <style>
-    :root{
+    :root {
       --bg: #fff;
       --surface: #fff;
       --text: #111827;
       --muted: #6b7280;
-      --accent: #ec4899; /* pink default */
+      --accent: #ec4899;
+      /* pink default */
       --accent-2: #f97316;
       --on-accent: #fff;
-      --card-shadow: 0 8px 30px rgba(2,6,23,0.08);
+      --card-shadow: 0 8px 30px rgba(2, 6, 23, 0.08);
     }
 
-    /* Theme classes — trocar apenas a classe no <body> (theme-pink, theme-teal, theme-cream, theme-dark) */
-    body.theme-pink{ --bg: #fff7fb; --surface:#ffffff; --text:#1f2937; --muted:#6b7280; --accent:#ec4899; --accent-2:#fb923c; --on-accent:#ffffff; }
-    body.theme-teal{ --bg: #f0fdfa; --surface:#ffffff; --text:#0f172a; --muted:#475569; --accent:#06b6d4; --accent-2:#0891b2; --on-accent:#042f36; }
-    body.theme-cream{ --bg: #fffaf0; --surface:#fffefc; --text:#1f2937; --muted:#6b7280; --accent:#f59e0b; --accent-2:#ef4444; --on-accent:#1f1a0f; }
-    body.theme-dark{ --bg: #0b1220; --surface:#0f1724; --text:#e6eef6; --muted:#9aa7b2; --accent:#f97316; --accent-2:#ec4899; --on-accent:#061022; }
-
-    body{ font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial; background:var(--bg); color:var(--text); }
+    
+    body {
+      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+      background: var(--bg);
+      color: var(--text);
+    }
 
     /* Buttons with class 'link-group' must stand out */
-    .link-group{
-      display:inline-flex; align-items:center; gap:0.6rem; padding:0.75rem 1.05rem; border-radius:9999px; font-weight:700; text-decoration:none;
-      box-shadow: var(--card-shadow); border: 1px solid rgba(0,0,0,0.04);
-      background: linear-gradient(90deg, var(--accent), var(--accent-2)); color:var(--on-accent);
-      transform: translateZ(0); transition: transform .18s ease, box-shadow .18s ease; 
+    .link-group {
+      display: inline-flex;
+      align-items: center;
+      gap: 0.6rem;
+      padding: 0.75rem 1.05rem;
+      border-radius: 9999px;
+      font-weight: 700;
+      text-decoration: none;
+      box-shadow: var(--card-shadow);
+      border: 1px solid rgba(0, 0, 0, 0.04);
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      color: var(--on-accent);
+      transform: translateZ(0);
+      transition: transform .18s ease, box-shadow .18s ease;
     }
-    .link-group:active{ transform: translateY(1px) scale(.997); }
+
+    .link-group:active {
+      transform: translateY(1px) scale(.997);
+    }
 
     /* Card style */
-    .card{ background:var(--surface); border-radius:16px; padding:1.25rem; box-shadow: var(--card-shadow); }
+    .card {
+      background: var(--surface);
+      border-radius: 16px;
+      padding: 1.25rem;
+      box-shadow: var(--card-shadow);
+    }
 
     /* Carousel specific */
-    .carousel-viewport{ overflow:hidden; position:relative; padding: 0 1rem;}
-    .carousel-track{ display:flex; gap:1rem; padding: 1rem 0; transition: transform .6s cubic-bezier(.22,.9,.36,1); will-change: transform; }
-    .carousel-item{ flex:0 0 auto; border-radius:12px; overflow:hidden; background:linear-gradient(180deg, rgba(255,255,255,0.02), rgba(0,0,0,0.03)); }
+    .carousel-viewport {
+      overflow: hidden;
+      position: relative;
+      padding: 0 1rem;
+    }
+
+    .carousel-track {
+      display: flex;
+      gap: 1rem;
+      padding: 1rem 0;
+      transition: transform .6s cubic-bezier(.22, .9, .36, 1);
+      will-change: transform;
+    }
+
+    .carousel-item {
+      flex: 0 0 auto;
+      border-radius: 12px;
+      overflow: hidden;
+      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.03));
+    }
 
     /* small helpers */
-    .muted{ color:var(--muted); }
-    .accent-underline{ background: linear-gradient(90deg, var(--accent), var(--accent-2)); -webkit-background-clip: text; background-clip:text; color:transparent; }
+    .muted {
+      color: var(--muted);
+    }
+
+    .accent-underline {
+      background: linear-gradient(90deg, var(--accent), var(--accent-2));
+      -webkit-background-clip: text;
+      background-clip: text;
+      color: transparent;
+    }
 
     /* Responsive spacing for first fold hero image */
-    .hero-img{ max-width:360px; border-radius:14px; box-shadow: 0 12px 40px rgba(2,6,23,0.12); }
+    .hero-img {
+      max-width: 360px;
+      border-radius: 14px;
+      box-shadow: 0 12px 40px rgba(2, 6, 23, 0.12);
+    }
 
     /* Accessible focus */
-    .link-group:focus{ outline:3px solid rgba(255,255,255,0.12); outline-offset:4px; }
+    .link-group:focus {
+      outline: 3px solid rgba(255, 255, 255, 0.12);
+      outline-offset: 4px;
+    }
+
+    .swiper-button-next::after,
+    .swiper-button-prev::after {
+      content: none !important;
+    }
 
     /* Small performance tip: reduce repaints with transform for scroll shadows */
   </style>
 </head>
+
 <body class="theme-pink">
 
-  <header class="hidden mx-auto px-6 py-6 flex items-center justify-between">
-    <div class="flex items-center gap-4">
+  <header class="mx-auto px-6 py-6 flex items-center justify-between">
+    <!-- <div class="flex items-center gap-4">
       <div class="w-12 h-12 rounded-lg bg-white card flex items-center justify-center font-bold text-lg">TA</div>
       <div>
         <div class="text-sm muted">Evento gratuito</div>
         <div class="text-xl font-extrabold">Tortas No Palito</div>
       </div>
     </div>
-    <nav class="hidden md:flex items-center gap-4">
+    <nav class="md:flex items-center gap-4">
       <a class="text-sm muted" href="#programacao">Programação</a>
       <a class="text-sm muted" href="#sobre">Sobre a produtora</a>
       <a class="text-sm muted" href="#garanta">Garanta sua vaga</a>
-    </nav>
+    </nav> -->
     <div class="md:hidden">
       <button id="themeToggle" title="Trocar tema" class="p-2 card">Tema</button>
     </div>
@@ -83,78 +144,63 @@
   <section class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
     <div>
       <!-- <div class="text-sm muted mb-3">Evento gratuito online — 3 dias</div> -->
-      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-center">Aprenda a fazer <span class="accent-underline">Tortas No Palito</span> que vendem muito</h1>
+      <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-center">Aprenda a fazer <span
+          class="accent-underline">Tortas No Palito</span> que vendem muito</h1>
 
-      
+
       <!-- CAROUSEL section -->
-        <div class="max-w-5xl mx-auto  px-6 py-8">
-          <!-- <div class="flex items-center justify-between mb-4"> -->
-            <h2 class="text-2xl font-bold">O que você pode fazer:</h2>
-            <div class="muted">Deslize para ver mais</div>
-          <!-- </div> -->
+      <div class="max-w-5xl mx-auto px-6 py-8">
+        <h2 class="text-2xl font-bold">O que você pode fazer:</h2>
+        <div class="muted mb-4">Deslize para ver mais</div>
 
-          <div class="card carousel-viewport px-4 py-0">
-            <div id="carouselTrack" class="carousel-track">
-              <!-- exemplo de imagens; adicione/remova items livremente -->
-              <!-- <div class="carousel-item" data-src="img1.jpg"><img src="https://images.unsplash.com/photo-1542831371-d531d36971e6?q=80&w=1200&auto=format&fit=crop" alt="torta 1" loading="lazy" style="width:100%;height:220px;object-fit:cover"></div>
-              <div class="carousel-item" data-src="img2.jpg"><img src="https://images.unsplash.com/photo-1551024506-0bccd828d307?q=80&w=1200&auto=format&fit=crop" alt="torta 2" loading="lazy" style="width:100%;height:220px;object-fit:cover"></div>
-              <div class="carousel-item" data-src="img3.jpg"><img src="https://images.unsplash.com/photo-1504674900247-0877df9cc836?q=80&w=1200&auto=format&fit=crop" alt="torta 3" loading="lazy" style="width:100%;height:220px;object-fit:cover"></div>
-              <div class="carousel-item" data-src="img4.jpg"><img src="https://images.unsplash.com/photo-1499636136210-6f4ee915583e?q=80&w=1200&auto=format&fit=crop" alt="torta 4" loading="lazy" style="width:100%;height:220px;object-fit:cover"></div>
-              <div class="carousel-item" data-src="img5.jpg"><img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=1200&auto=format&fit=crop" alt="torta 5" loading="lazy" style="width:100%;height:220px;object-fit:cover"></div> -->
-            <div class="carousel-item" ><img src="./img/tortas/pistache.jpg" class="w-full h-56 object-cover rounded-lg" alt="Torta 4" /></div>
-            <div class="carousel-item" ><img src="./img/tortas/cafe.jpg" class="w-full h-56 object-cover rounded-lg" alt="Torta 1" /></div>
-            <div class="carousel-item" ><img src="./img/tortas/choc.jpg" class="w-full h-56 object-cover rounded-lg" alt="Torta 2" /></div>
-            <div class="carousel-item" ><img src="./img/tortas/oreo.jpg" class="w-full h-56 object-cover rounded-lg" alt="Torta 3" /></div>
-            <div class="carousel-item" ><img src="./img/tortas/vermelho.jpg" class="w-full h-56 object-cover rounded-lg" alt="Torta 5" /></div>
-            <div class="carousel-item" ><img src="./img/tortas/rosa.jpg" class="w-full h-56 object-cover rounded-lg" alt="Torta 6" /></div>
+        <!-- Swiper container -->
+        <div class="swiper card p-3">
+          <div class="swiper-wrapper">
+            <div class="swiper-slide">
+              <img src="./img/tortas/pistache.jpg" class="w-full h-56 object-cover rounded-lg" alt="Torta 1">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/tortas/cafe.jpg" class="w-full h-56 object-cover rounded-lg" alt="Torta 2">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/tortas/choc.jpg" class="w-full h-56 object-cover rounded-lg" alt="Torta 3">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/tortas/oreo.jpg" class="w-full h-56 object-cover rounded-lg" alt="Torta 4">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/tortas/vermelho.jpg" class="w-full h-56 object-cover rounded-lg" alt="Torta 5">
+            </div>
+            <div class="swiper-slide">
+              <img src="./img/tortas/rosa.jpg" class="w-full h-56 object-cover rounded-lg" alt="Torta 6">
+            </div>
           </div>
-          
 
-          <div class="mt-4 flex justify-end">
-            <button id="prev" class="px-4 py-2 card muted">◀</button>
-            <button id="next" class="px-4 py-2 card ml-2 muted">▶</button>
+          <!-- Navigation buttons -->
+          <div class="flex justify-end mt-4 gap-2">
+            <button class="swiper-button-prev !static !text-gray-500 !w-auto !h-auto px-4 py-2 card">◀</button>
+            <button class="swiper-button-next !static !text-gray-500 !w-auto !h-auto px-4 py-2 card">▶</button>
           </div>
-
-          
-        </div>
-        <div class="mt-8 flex items-center gap-4">
-        <a href="#whats" class="link-group text-center" id="ctaTop">Entrar no grupo para participar do Evento</a>
-        <!-- <a href="#programacao" class="text-sm muted">Ver cronograma</a> -->
-      </div>
-      <p class="mt-4 text-lg muted max-w-xl text-justify">Se você quer aprender a fazer lindas Tortas no Palito, deliciosas e que vendem muito, essa é a sua chance! Entre no grupo do WhatsApp para participar do Evento Gratuito.</p>
-      <div class="mt-8 grid grid-cols-1 sm:grid-cols-3 gap-4">
-        <div class="card text-center">
-          <div class="text-xs muted">Duração</div>
-          <div class="font-bold mt-1">3 dias</div>
-        </div>
-        <div class="card text-center">
-          <div class="text-xs muted">Formato</div>
-          <div class="font-bold mt-1">Aulas disponibilizadas durante o Evento</div>
-        </div>
-        <div class="card text-center">
-          <div class="text-xs muted">Vagas</div>
-          <div class="font-bold mt-1">Limitadas</div>
         </div>
       </div>
 
-    </div>
+      <aside class="flex flex-col items-center lg:items-end">
+        <!-- Espaço para imagem da produtora -->
+        <img class="h-24 rounded-full sm:mx-0 sm:shrink-0  self-end" src="./img/Isis-small.png" alt="Isis Alvarez">
 
-    <aside class="flex flex-col items-center lg:items-end">
-      <!-- Espaço para imagem da produtora -->
-      <img class="h-24 rounded-full sm:mx-0 sm:shrink-0  self-end" src="./img/Isis-small.png" alt="Isis Alvarez">
-
-      <div class="mt-6 text-right max-w-sm">
-        <div class="text-sm muted">Com</div>
-        <div class="text-lg font-bold">Ísis Alvarez</div>
-        <p class="mt-2 muted">Formada em Gastronomia (2003). Lenôtre (Paris), cursos em Barcelona e Florença. Método que ajudou mais de 8 mil pessoas a se tornarem boleiras de sucesso.</p>
-        <div class="mt-4">
-          <a class="link-group" href="#whats">Entrar no grupo</a>
+        <div class="mt-6 text-right max-w-sm">
+          <div class="text-sm muted">Com</div>
+          <div class="text-lg font-bold">Ísis Alvarez</div>
+          <p class="mt-2 muted">Formada em Gastronomia (2003). Lenôtre (Paris), cursos em Barcelona e Florença. Método
+            que ajudou mais de 8 mil pessoas a se tornarem boleiras de sucesso.</p>
+          <div class="mt-4">
+            <a class="link-group" href="#whats">Entrar no grupo</a>
+          </div>
         </div>
-      </div>
-    </aside>
+      </aside>
   </section>
 
-  
+
 
   <!-- Programacao / Conteudo -->
   <section id="programacao" class="max-w-6xl mx-auto px-6 py-12">
@@ -164,19 +210,25 @@
     <div class="mt-8 grid gap-6">
       <article class="card">
         <h4 class="text-xl font-bold">DIA 1</h4>
-        <p class="mt-2 muted">Neste dia eu vou ensinar que existe um tipo de doce que quase ninguém faz — as tortas no palito — e que você pode aproveitar essa chance pra se destacar e ganhar dinheiro com algo diferente e muito lucrativo.</p>
+        <p class="mt-2 muted">Neste dia eu vou ensinar que existe um tipo de doce que quase ninguém faz — as tortas no
+          palito — e que você pode aproveitar essa chance pra se destacar e ganhar dinheiro com algo diferente e muito
+          lucrativo.</p>
         <div class="mt-4"><a class="link-group" href="#whats">Entrar no grupo</a></div>
       </article>
 
       <article class="card">
         <h4 class="text-xl font-bold">DIA 2</h4>
-        <p class="mt-2 muted">Neste dia eu vou ensinar como fazer tortas no palito com sabores que dão água na boca e uma aparência tão bonita que ninguém resiste — tudo pra encantar o cliente e fazer seu trabalho valer mais.</p>
+        <p class="mt-2 muted">Neste dia eu vou ensinar como fazer tortas no palito com sabores que dão água na boca e
+          uma aparência tão bonita que ninguém resiste — tudo pra encantar o cliente e fazer seu trabalho valer mais.
+        </p>
         <div class="mt-4"><a class="link-group" href="#whats">Entrar no grupo</a></div>
       </article>
 
       <article class="card">
         <h4 class="text-xl font-bold">DIA 3</h4>
-        <p class="mt-2 muted">No último dia eu vou te mostrar como ganhar dinheiro de verdade com as tortas no palito — desde colocar o preço certo até vender e lucrar com o que você faz. Também serão abertas as vagas para o novo curso TORTAS NO PALITO.</p>
+        <p class="mt-2 muted">No último dia eu vou te mostrar como ganhar dinheiro de verdade com as tortas no palito —
+          desde colocar o preço certo até vender e lucrar com o que você faz. Também serão abertas as vagas para o novo
+          curso TORTAS NO PALITO.</p>
         <div class="mt-4"><a class="link-group" href="#whats">Entrar no grupo</a></div>
       </article>
     </div>
@@ -186,22 +238,28 @@
   <section id="sobre" class="max-w-6xl mx-auto px-6 py-12">
 
     <aside class="card flex flex-col items-center">
-        <img src="./img/Isis.png" alt="Isis Alvarez" class="w-full rounded-lg" loading="lazy">
-        <div class="mt-4 text-center">
-          <div class="font-bold">Ísis Alvarez</div>
-          <div class="muted text-sm">Chef confeiteira & instrutora</div>
-        </div>
-      </aside>
+      <img src="./img/Isis.png" alt="Isis Alvarez" class="w-full rounded-lg" loading="lazy">
+      <div class="mt-4 text-center">
+        <div class="font-bold">Ísis Alvarez</div>
+        <div class="muted text-sm">Chef confeiteira & instrutora</div>
+      </div>
+    </aside>
     <div class="grid lg:grid-cols-3 gap-8 items-start">
       <div class="lg:col-span-2">
         <h3 class="text-3xl font-extrabold">Ísis Alvarez</h3>
-        <p class="mt-4 muted">Ísis Alvarez, se formou em Gastronomia em 2003 e logo em seguida mergulhou de cabeça no mundo da confeitaria. Fora do país, aprimorei meus conhecimentos na Lenôtre, uma das principais escolas de gastronomia de Paris, me especializando também em Barcelona (Espanha) e Florença(Itália).</p>
-        <p class="mt-4 muted">A partir de vários pedidos de aulas e receitas, comecei então a formar turmas com variados cursos de confeitaria na região. Ao mesmo tempo, comecei a oferecer minhas aulas ONLINE, gravando cursos completos e com suporte, para que todos os que desejam aprender ou aprimorar seus conhecimentos consigam com esta facilidade.</p>
-        <p class="mt-4 font-semibold">Esse método já ajudou mais de 8 mil pessoas a se tornarem boleiras de sucesso no mercado.</p>
+        <p class="mt-4 muted">Ísis Alvarez, se formou em Gastronomia em 2003 e logo em seguida mergulhou de cabeça no
+          mundo da confeitaria. Fora do país, aprimorei meus conhecimentos na Lenôtre, uma das principais escolas de
+          gastronomia de Paris, me especializando também em Barcelona (Espanha) e Florença(Itália).</p>
+        <p class="mt-4 muted">A partir de vários pedidos de aulas e receitas, comecei então a formar turmas com
+          variados cursos de confeitaria na região. Ao mesmo tempo, comecei a oferecer minhas aulas ONLINE, gravando
+          cursos completos e com suporte, para que todos os que desejam aprender ou aprimorar seus conhecimentos
+          consigam com esta facilidade.</p>
+        <p class="mt-4 font-semibold">Esse método já ajudou mais de 8 mil pessoas a se tornarem boleiras de sucesso no
+          mercado.</p>
         <div class="mt-6"><a class="link-group" href="#whats">Entrar no grupo</a></div>
       </div>
 
-      
+
     </div>
   </section>
 
@@ -214,7 +272,8 @@
     </div>
   </section>
 
-  <footer class="max-w-6xl mx-auto px-6 py-10 muted text-sm text-center">© <span id="year"></span> Ísis Alvarez • Evento gratuito • <a href="#" class="muted">Política de Privacidade</a></footer>
+  <footer class="max-w-6xl mx-auto px-6 py-10 muted text-sm text-center">© <span id="year"></span> Ísis Alvarez • Evento
+    gratuito • <a href="#" class="muted">Política de Privacidade</a></footer>
 
   <!-- Placeholder anchor for whats link -->
   <div id="whats" style="display:none"></div>
@@ -223,34 +282,25 @@
     // set year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    // Theme toggle helper: cycles through available classes
-    (function(){
-      const themes = ['theme-pink','theme-teal','theme-cream','theme-dark'];
-      const btn = document.getElementById('themeToggle');
-      btn && btn.addEventListener('click', ()=>{
-        const body = document.body;
-        const cur = themes.find(t=>body.classList.contains(t)) || themes[0];
-        const next = themes[(themes.indexOf(cur)+1) % themes.length];
-        themes.forEach(t=>body.classList.remove(t));
-        body.classList.add(next);
-      });
-    })();
+    
 
     // Lightweight link-group tracking: scroll to top then open whatsapp (placeholder)
-    document.querySelectorAll('.link-group').forEach(a=>{
-      a.addEventListener('click', (e)=>{
+    document.querySelectorAll('.link-group').forEach(a => {
+      a.addEventListener('click', (e) => {
         e.preventDefault();
         // Example: replace '#' with your WhatsApp link (with phone & prefilled message)
         const whatsappLink = 'https://chat.whatsapp.com/SEU_GRUPO_AQUI';
         // smooth micro-animation
-        document.documentElement.scrollTo({top:0, behavior:'smooth'});
-        setTimeout(()=> window.open(whatsappLink, '_blank'), 600);
+        document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
+        setTimeout(() => window.open(whatsappLink, '_blank'), 600);
       });
     });
 
     // Accessibility: make carousel items focusable
-    document.querySelectorAll('.carousel-item').forEach((it,i)=>{ it.setAttribute('tabindex','0'); });
+    document.querySelectorAll('.carousel-item').forEach((it, i) => { it.setAttribute('tabindex', '0'); });
   </script>
   <script src="./js/carousel.js"></script>
+  <script src="./js/seletor-de-tema.js"></script>
 </body>
+
 </html>
