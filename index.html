@@ -15,6 +15,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="./css/temas.css" />
+  <link rel="stylesheet" href="./css/botao-whatsapp.css" />
   <style>
     :root {
       --bg: #fff;
@@ -28,7 +29,7 @@
       --card-shadow: 0 8px 30px rgba(2, 6, 23, 0.08);
     }
 
-    
+
     body {
       font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
       background: var(--bg);
@@ -122,37 +123,38 @@
 
 <body class="theme-pink">
 
-  <header class="mx-auto px-6 py-6 flex items-center justify-between">
-    <!-- <div class="flex items-center gap-4">
-      <div class="w-12 h-12 rounded-lg bg-white card flex items-center justify-center font-bold text-lg">TA</div>
-      <div>
-        <div class="text-sm muted">Evento gratuito</div>
-        <div class="text-xl font-extrabold">Tortas No Palito</div>
-      </div>
-    </div>
-    <nav class="md:flex items-center gap-4">
-      <a class="text-sm muted" href="#programacao">Programação</a>
-      <a class="text-sm muted" href="#sobre">Sobre a produtora</a>
-      <a class="text-sm muted" href="#garanta">Garanta sua vaga</a>
-    </nav> -->
+  
+<!-- Botão flutuante WhatsApp -->
+<a href=""
+
+   class="link-direto whatsapp-float text-center"
+   target="_blank"
+   rel="noopener"
+   aria-label="Clique aqui se não conseguiu entrar no grupo"
+   >
+  <span>Clique aqui se não conseguiu entrar no grupo</span>
+</a>
+
+
+
+  <header class="hidden mx-auto px-6 py-6 flex items-center justify-between">
     <div class="md:hidden">
       <button id="themeToggle" title="Trocar tema" class="p-2 card">Tema</button>
     </div>
   </header>
 
   <!-- HERO / FIRST FOLD -->
-  <section class="max-w-6xl mx-auto px-6 py-10 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
+  <section class="max-w-7xl mx-auto px-6 py-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
     <div>
-      <!-- <div class="text-sm muted mb-3">Evento gratuito online — 3 dias</div> -->
       <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-center">Aprenda a fazer <span
           class="accent-underline">Tortas No Palito</span> que vendem muito</h1>
+      <div class="text-sm muted mb-3 text-center">Em um evento de <strong>3 dias gratuito</strong> e
+        <strong>online</strong> com a chef <strong>Ísis Alvarez</strong></div>
 
 
       <!-- CAROUSEL section -->
-      <div class="max-w-5xl mx-auto px-6 py-8">
-        <h2 class="text-2xl font-bold">O que você pode fazer:</h2>
-        <div class="muted mb-4">Deslize para ver mais</div>
-
+      <section class="max-w-6xl mx-auto px-6 py-8">
+        <!-- <h2 class="text-2xl font-bold">O que você pode fazer:</h2> -->
         <!-- Swiper container -->
         <div class="swiper card p-3">
           <div class="swiper-wrapper">
@@ -182,17 +184,23 @@
             <button class="swiper-button-next !static !text-gray-500 !w-auto !h-auto px-4 py-2 card">▶</button>
           </div>
         </div>
-      </div>
+
+        <div class="mt-6"><a class="link-group text-center" id="finalCta" href="#whats">Entrar no grupo VIP para participar do Evento</a></div>
+        <p class="text-sm muted mt-1 text-center">
+        ⚠️ Se o botão não funcionar, <a href="" target="_blank" class="link-direto" style="color: var(--accent)">
+          clique aqui para falar direto conosco</a>.</p>
+        <p class="mt-3 muted">Vagas e informações exclusivas serão enviadas no grupo do WhatsApp.</p>
+
+      </section>
 
       <aside class="flex flex-col items-center lg:items-end">
-        <!-- Espaço para imagem da produtora -->
         <img class="h-24 rounded-full sm:mx-0 sm:shrink-0  self-end" src="./img/Isis-small.png" alt="Isis Alvarez">
 
         <div class="mt-6 text-right max-w-sm">
-          <div class="text-sm muted">Com</div>
+          <div class="text-sm muted">Com a chef</div>
           <div class="text-lg font-bold">Ísis Alvarez</div>
           <p class="mt-2 muted">Formada em Gastronomia (2003). Lenôtre (Paris), cursos em Barcelona e Florença. Método
-            que ajudou mais de 8 mil pessoas a se tornarem boleiras de sucesso.</p>
+            que ajudou mais de 8 mil pessoas a se tornarem confeiteiras de sucesso.</p>
           <div class="mt-4">
             <a class="link-group" href="#whats">Entrar no grupo</a>
           </div>
@@ -213,7 +221,6 @@
         <p class="mt-2 muted">Neste dia eu vou ensinar que existe um tipo de doce que quase ninguém faz — as tortas no
           palito — e que você pode aproveitar essa chance pra se destacar e ganhar dinheiro com algo diferente e muito
           lucrativo.</p>
-        <div class="mt-4"><a class="link-group" href="#whats">Entrar no grupo</a></div>
       </article>
 
       <article class="card">
@@ -221,7 +228,6 @@
         <p class="mt-2 muted">Neste dia eu vou ensinar como fazer tortas no palito com sabores que dão água na boca e
           uma aparência tão bonita que ninguém resiste — tudo pra encantar o cliente e fazer seu trabalho valer mais.
         </p>
-        <div class="mt-4"><a class="link-group" href="#whats">Entrar no grupo</a></div>
       </article>
 
       <article class="card">
@@ -229,8 +235,9 @@
         <p class="mt-2 muted">No último dia eu vou te mostrar como ganhar dinheiro de verdade com as tortas no palito —
           desde colocar o preço certo até vender e lucrar com o que você faz. Também serão abertas as vagas para o novo
           curso TORTAS NO PALITO.</p>
-        <div class="mt-4"><a class="link-group" href="#whats">Entrar no grupo</a></div>
+        
       </article>
+      <div class="mt-4"><a class="link-group" href="#whats">Entrar no grupo</a></div>
     </div>
   </section>
 
@@ -244,17 +251,16 @@
         <div class="muted text-sm">Chef confeiteira & instrutora</div>
       </div>
     </aside>
-    <div class="grid lg:grid-cols-3 gap-8 items-start">
+    <div class="grid lg:grid-cols-3 gap-8 items-start mt-4">
       <div class="lg:col-span-2">
-        <h3 class="text-3xl font-extrabold">Ísis Alvarez</h3>
         <p class="mt-4 muted">Ísis Alvarez, se formou em Gastronomia em 2003 e logo em seguida mergulhou de cabeça no
-          mundo da confeitaria. Fora do país, aprimorei meus conhecimentos na Lenôtre, uma das principais escolas de
-          gastronomia de Paris, me especializando também em Barcelona (Espanha) e Florença(Itália).</p>
-        <p class="mt-4 muted">A partir de vários pedidos de aulas e receitas, comecei então a formar turmas com
-          variados cursos de confeitaria na região. Ao mesmo tempo, comecei a oferecer minhas aulas ONLINE, gravando
+          mundo da confeitaria. Fora do país, aprimorou seus conhecimentos na <i>Lenôtre</i>, uma das principais escolas de
+          gastronomia de Paris, especializando-se também em Barcelona (Espanha) e Florença (Itália).</p>
+        <p class="mt-4 muted">A partir de vários pedidos de aulas e receitas, começou então a formar turmas com
+          variados cursos de confeitaria na região. Ao mesmo tempo, começou a oferecer suas aulas ONLINE, gravando
           cursos completos e com suporte, para que todos os que desejam aprender ou aprimorar seus conhecimentos
           consigam com esta facilidade.</p>
-        <p class="mt-4 font-semibold">Esse método já ajudou mais de 8 mil pessoas a se tornarem boleiras de sucesso no
+        <p class="mt-4 font-semibold">Esse método já ajudou mais de <strong>8 mil pessoas</strong> a se tornarem confeiteiras de sucesso no
           mercado.</p>
         <div class="mt-6"><a class="link-group" href="#whats">Entrar no grupo</a></div>
       </div>
@@ -282,25 +288,16 @@
     // set year
     document.getElementById('year').textContent = new Date().getFullYear();
 
-    
 
-    // Lightweight link-group tracking: scroll to top then open whatsapp (placeholder)
-    document.querySelectorAll('.link-group').forEach(a => {
-      a.addEventListener('click', (e) => {
-        e.preventDefault();
-        // Example: replace '#' with your WhatsApp link (with phone & prefilled message)
-        const whatsappLink = 'https://chat.whatsapp.com/SEU_GRUPO_AQUI';
-        // smooth micro-animation
-        document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
-        setTimeout(() => window.open(whatsappLink, '_blank'), 600);
-      });
-    });
+
+    
 
     // Accessibility: make carousel items focusable
     document.querySelectorAll('.carousel-item').forEach((it, i) => { it.setAttribute('tabindex', '0'); });
   </script>
   <script src="./js/carousel.js"></script>
   <script src="./js/seletor-de-tema.js"></script>
+  <script src="./js/botao-whatsapp.js"></script>
 </body>
 
 </html>
