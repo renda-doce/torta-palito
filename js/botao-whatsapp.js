@@ -9,10 +9,11 @@ document.querySelectorAll('.link-group').forEach(a => {
     });
 });
 
-
-document.querySelector('.link-direto').addEventListener('click', (e) => {
-    e.preventDefault();
-        window.open(link_direto, '_blank');
+document.querySelectorAll('.link-direto').forEach(a => {
+    a.addEventListener('click', (e) => {
+        e.preventDefault();
+        window.open(link_direto, '_blank')
+    });
 });
 
 document.querySelector('#link-politica-privacidade').addEventListener('click', (e) => {
