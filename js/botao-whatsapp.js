@@ -10,7 +10,7 @@ document.querySelectorAll('.link-group').forEach(a => {
 });
 
 
-document.querySelectorAll('.tip-link-direto').forEach(a => {
+document.querySelectorAll('.link-direto').forEach(a => {
     a.addEventListener('click', (e) => {
         e.preventDefault();
         window.open(link_direto, '_blank');
