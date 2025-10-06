@@ -5,10 +5,7 @@ const link_direto = 'https://wa.me/5511975037855?text=Ol%C3%A1!%20%0AN%C3%A3o%20
 document.querySelectorAll('.link-group').forEach(a => {
     a.addEventListener('click', (e) => {
         e.preventDefault();
-
-        // smooth micro-animation
-        document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
-        setTimeout(() => window.open(link_grupo, '_blank'), 200);
+        window.open(link_grupo, '_blank')
     });
 });
 
@@ -16,15 +13,12 @@ document.querySelectorAll('.link-group').forEach(a => {
 document.querySelectorAll('.tip-link-direto').forEach(a => {
     a.addEventListener('click', (e) => {
         e.preventDefault();
-
-        // smooth micro-animation
-        document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
-        setTimeout(() => window.open(link_direto, '_blank'), 200);
+        window.open(link_direto, '_blank');
     });
 });
 
 document.querySelector('#link-politica-privacidade').addEventListener('click', (e) => {
-        document.querySelector('#politica-privacidade').classList.remove('hidden');
+    document.querySelector('#politica-privacidade').classList.remove('hidden');
 });
 
 
