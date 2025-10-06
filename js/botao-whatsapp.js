@@ -8,7 +8,7 @@ document.querySelectorAll('.link-group').forEach(a => {
 
         // smooth micro-animation
         document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
-        setTimeout(() => window.open(link_grupo, '_blank'), 600);
+        setTimeout(() => window.open(link_grupo, '_blank'), 200);
     });
 });
 
@@ -19,7 +19,7 @@ document.querySelectorAll('.tip-link-direto').forEach(a => {
 
         // smooth micro-animation
         document.documentElement.scrollTo({ top: 0, behavior: 'smooth' });
-        setTimeout(() => window.open(link_direto, '_blank'), 600);
+        setTimeout(() => window.open(link_direto, '_blank'), 200);
     });
 });
 
