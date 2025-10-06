@@ -3,17 +3,15 @@ const link_grupo = 'https://chat.whatsapp.com/DlIcBaIiCdOITb4HRS9NIE';
 const link_direto = 'https://wa.me/5511975037855?text=Ol%C3%A1!%20%0AN%C3%A3o%20estou%20conseguindo%20entrar%20no%20grupo%20do%20evento%20tortas%20no%20palito.%20%0APode%20me%20adicionar%3F';
 
 document.querySelectorAll('.link-group').forEach(a => {
-    a.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.open(link_grupo, '_blank')
-    });
+    a.setAttribute("href", link_grupo);
+    a.setAttribute("target", "_blank"); // abre em nova aba
+    a.setAttribute("rel", "noopener noreferrer"); //
 });
 
 document.querySelectorAll('.link-direto').forEach(a => {
-    a.addEventListener('click', (e) => {
-        e.preventDefault();
-        window.open(link_direto, '_blank')
-    });
+    a.setAttribute("href", link_direto);
+    a.setAttribute("target", "_blank"); // abre em nova aba
+    a.setAttribute("rel", "noopener noreferrer"); //
 });
 
 document.querySelector('#link-politica-privacidade').addEventListener('click', (e) => {
