@@ -10,32 +10,51 @@
   <meta name="description"
     content="Aprenda a fazer Tortas no Palito com Ísis Alvarez — evento gratuito de 3 dias. Entre no grupo do WhatsApp e garanta sua vaga." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
+  <link rel="preload" as="style"
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
 
   <!-- SwiperJS CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
   <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/botao-whatsapp.css" />
+
+  <!-- Meta Pixel Code -->
+  <script>
+    !function (f, b, e, v, n, t, s) {
+      if (f.fbq) return; n = f.fbq = function () {
+        n.callMethod ?
+        n.callMethod.apply(n, arguments) : n.queue.push(arguments)
+      };
+      if (!f._fbq) f._fbq = n; n.push = n; n.loaded = !0; n.version = '2.0';
+      n.queue = []; t = b.createElement(e); t.async = !0;
+      t.src = v; s = b.getElementsByTagName(e)[0];
+      s.parentNode.insertBefore(t, s)
+    }(window, document, 'script',
+      'https://connect.facebook.net/en_US/fbevents.js');
+    fbq('init', '1160148329323448');
+    fbq('track', 'PageView');
+  </script>
+  <noscript><img height="1" width="1" style="display:none"
+      src="https://www.facebook.com/tr?id=1160148329323448&ev=PageView&noscript=1" /></noscript>
+  <!-- End Meta Pixel Code -->
+
 </head>
 
 <body>
-<!-- Botão flutuante + texto de dica -->
-<div id="whatsapp-float"
-     class="fixed bottom-5 right-5 flex items-center gap-2 transition-opacity duration-700 z-[9999]">
-  <div id="whatsapp-hint"
-       class="bg-white text-gray-800 text-sm px-3 py-2 rounded-xl shadow-md max-w-[200px] md:hidden text-right">
-    Se não conseguir entrar no grupo, fale conosco ▶
-  </div>
+  <!-- Botão flutuante + texto de dica -->
+  <div id="whatsapp-float"
+    class="fixed bottom-5 right-5 flex items-center gap-2 transition-opacity duration-700 z-[9999]">
+    <div id="whatsapp-hint"
+      class="bg-white text-gray-800 text-sm px-3 py-2 rounded-xl shadow-md max-w-[200px] md:hidden text-right">
+      Se não conseguir entrar no grupo, fale conosco ▶
+    </div>
 
-  <a id="whatsapp-btn"
-     target="_blank"
-     rel="noopener"
-     aria-label="Falar no WhatsApp"
-     class="link-direto flex items-center justify-center w-14 h-14 bg-[#42f09a] rounded-full shadow-lg hover:scale-110 transition-transform duration-200">
-    <img src="./img/whatsapp.svg" alt="WhatsApp" width="34" height="34">
-  </a>
-</div>
+    <a id="whatsapp-btn" target="_blank" rel="noopener" aria-label="Falar no WhatsApp"
+      class="link-direto flex items-center justify-center w-14 h-14 bg-[#42f09a] rounded-full shadow-lg hover:scale-110 transition-transform duration-200">
+      <img src="./img/whatsapp.svg" alt="WhatsApp" width="34" height="34">
+    </a>
+  </div>
 
   <!-- HERO / FIRST FOLD -->
   <section class="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -43,7 +62,8 @@
       <h1 class="text-4xl md:text-5xl font-extrabold leading-tight text-center">Aprenda a fazer <span
           class="accent-underline">Tortas No Palito</span> que vendem muito</h1>
       <div class="text-sm muted mb-3 text-center">Em um evento de <strong>3 dias gratuito</strong> e
-        <strong>online</strong> com a chef <strong>Ísis Alvarez</strong></div>
+        <strong>online</strong> com a chef <strong>Ísis Alvarez</strong>
+      </div>
 
 
       <!-- CAROUSEL section -->
@@ -79,18 +99,22 @@
           </div>
         </div>
 
-        <div class="mt-6"><a class="link-group text-center" id="finalCta" href="#whats">Entrar no grupo VIP para participar do Evento</a></div>
-          <p class="text-sm muted mt-3 text-center">
-        Se o botão não funcionar, <a class="link-direto" style="color: var(--accent)"><strong>clique aqui para falar direto conosco</strong></a></p>
-        <p class="mt-3 muted text-center"><strong>Vagas Limitadas!</strong><br>Entre no grupo clicando no botão acima para receber informações exclusivas.</p>
+        <div class="mt-6"><a class="link-group text-center" id="finalCta" href="#whats">Entrar no grupo VIP para
+            participar do Evento</a></div>
+        <p class="text-sm muted mt-3 text-center">
+          Se o botão não funcionar, <a class="link-direto" style="color: var(--accent)"><strong>clique aqui para falar
+              direto conosco</strong></a></p>
+        <p class="mt-3 muted text-center"><strong>Vagas Limitadas!</strong><br>Entre no grupo clicando no botão acima
+          para receber informações exclusivas.</p>
       </section>
 
       <aside class="flex flex-col items-center lg:items-end">
         <h3 class="text-3xl font-extrabold mt-8">Com quem você vai aprender?</h3>
-        <img class="h-24 rounded-full sm:mx-0 sm:shrink-0  self-end mt-4" style="border: 3px solid var(--accent-2);" src="./img/Isis-small.png" alt="Isis Alvarez">
+        <img class="h-24 rounded-full sm:mx-0 sm:shrink-0  self-end mt-4" style="border: 3px solid var(--accent-2);"
+          src="./img/Isis-small.png" alt="Isis Alvarez">
 
         <div class="mt-6 text-right max-w-sm">
-          
+
           <div class="text-lg font-bold">Ísis Alvarez</div>
           <p class="mt-2 muted">Formada em Gastronomia (2003). Lenôtre (Paris), cursos em Barcelona e Florença. Método
             que ajudou mais de 8 mil pessoas a se tornarem confeiteiras de sucesso.</p>
@@ -112,18 +136,20 @@
       <article class="card">
         <h4 class="text-xl font-bold">DIA 1</h4>
         <p class="mt-2 muted">No primeiro dia eu vou te apresentar as tortas no palito e como você pode aproveitar essa
-           oportunidade para incluir no seu cardápio essa sobremesa extremamente lucrativa</p>
+          oportunidade para incluir no seu cardápio essa sobremesa extremamente lucrativa</p>
       </article>
 
       <article class="card">
         <h4 class="text-xl font-bold">DIA 2</h4>
-        <p class="mt-2 muted">No segundo dia, você vai aprender como montar e finalizar uma torta no palito de maneira perfeita
+        <p class="mt-2 muted">No segundo dia, você vai aprender como montar e finalizar uma torta no palito de maneira
+          perfeita
         </p>
       </article>
 
       <article class="card">
         <h4 class="text-xl font-bold">DIA 3</h4>
-        <p class="mt-2 muted">No terceiro dia, teremos uma aula teórica, onde você aprenderá a precificar, vender e lucrar de verdade com as tortas.</p>
+        <p class="mt-2 muted">No terceiro dia, teremos uma aula teórica, onde você aprenderá a precificar, vender e
+          lucrar de verdade com as tortas.</p>
       </article>
       <div class="text-2xl mt-3 text-center">Não perca sua vaga!</div>
       <div class="mt-4"><a class="link-group" href="#whats">Entrar no grupo VIP</a></div>
@@ -143,13 +169,15 @@
     <div class="grid lg:grid-cols-3 gap-8 items-start mt-4">
       <div class="lg:col-span-2">
         <p class="mt-4 muted">Ísis Alvarez, se formou em Gastronomia em 2003 e logo em seguida mergulhou de cabeça no
-          mundo da confeitaria. Fora do país, aprimorou seus conhecimentos na <i>Lenôtre</i>, uma das principais escolas de
+          mundo da confeitaria. Fora do país, aprimorou seus conhecimentos na <i>Lenôtre</i>, uma das principais
+          escolas de
           gastronomia de Paris, especializando-se também em Barcelona (Espanha) e Florença (Itália).</p>
         <p class="mt-4 muted">A partir de vários pedidos de aulas e receitas, começou então a formar turmas com
           variados cursos de confeitaria na região. Ao mesmo tempo, começou a oferecer suas aulas ONLINE, gravando
           cursos completos e com suporte, para que todos os que desejam aprender ou aprimorar seus conhecimentos
           consigam com esta facilidade.</p>
-        <p class="mt-4 font-semibold">Esse método já ajudou mais de <strong>8 mil pessoas</strong> a se tornarem confeiteiras de sucesso no
+        <p class="mt-4 font-semibold">Esse método já ajudou mais de <strong>8 mil pessoas</strong> a se tornarem
+          confeiteiras de sucesso no
           mercado.</p>
         <div class="mt-6"><a class="link-group" href="#whats">Entrar no grupo VIP</a></div>
       </div>
@@ -164,25 +192,27 @@
       <h3 class="text-2xl font-extrabold">Pronto para transformar sua renda com tortas no palito?</h3>
       <p class="mt-3 muted">Informações exclusivas serão enviadas no grupo do WhatsApp.</p>
       <div class="mt-6"><a class="link-group" id="finalCta" href="#whats">Entrar no grupo VIP do WhatsApp</a></div>
-      
+
     </div>
     <p class="text-sm muted mt-3 text-center">
-        ⚠️ Se o botão não funcionar, <a class="link-direto" style="color: var(--accent)"><strong>clique aqui para falar direto conosco</strong></a></p>
+      ⚠️ Se o botão não funcionar, <a class="link-direto" style="color: var(--accent)"><strong>clique aqui para falar
+          direto conosco</strong></a></p>
   </section>
   <div class="link-politica-privacidade mx-6 text-center muted">
     <a href="#politica-privacidade">clique aqui para ler nossa Política de Privacidade</a>
   </div>
-  
+
   <div class="hidden text-sm muted text-justify p-6" id="politica-privacidade">
-      Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, 
-      a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar claramente e 
-      mostrar todas as provas do produto e usamos resultados reais. Nós não vendemos o seu e-mail ou qualquer 
-      informação para terceiros. Jamais fazemos nenhum tipo de spam. Se você tiver alguma dúvida, sinta-se à 
-      vontade para usar o link de contato e falar conosco em horário comercial de Segunda a Sextas das 09h00 ás 
-      19h00. Lemos e respondemos todas as mensagens por ordem de chegada.<br>
-      <span class="link-politica-privacidade"><strong>Fechar</strong></span>
+    Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook,
+    a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar claramente e
+    mostrar todas as provas do produto e usamos resultados reais. Nós não vendemos o seu e-mail ou qualquer
+    informação para terceiros. Jamais fazemos nenhum tipo de spam. Se você tiver alguma dúvida, sinta-se à
+    vontade para usar o link de contato e falar conosco em horário comercial de Segunda a Sextas das 09h00 ás
+    19h00. Lemos e respondemos todas as mensagens por ordem de chegada.<br>
+    <span class="link-politica-privacidade"><strong>Fechar</strong></span>
   </div>
-  <footer class="max-w-6xl mx-auto px-6 py-10 muted text-sm text-center"><br> • © <span id="year"></span> Renda Doce • </footer>
+  <footer class="max-w-6xl mx-auto px-6 py-10 muted text-sm text-center"><br> • © <span id="year"></span> Renda Doce •
+  </footer>
   <div class="mb-9"></div>
   <script>
     // set year
