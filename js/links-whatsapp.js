@@ -22,14 +22,14 @@ document.querySelectorAll('.link-direto').forEach(a => {
 
 
 let exibe_politica = false;
+
 // Mostra ou esconde a política de privacidade
 document.querySelectorAll('.link-politica-privacidade').forEach(a => {
-    a.addEventListener('click', (e) => {
-        exibe_politica = !exibe_politica;
-        if (exibe_politica) {
-            document.querySelector('#politica-privacidade').classList.remove('hidden');
-        } else {
-            document.querySelector('#politica-privacidade').classList.add('hidden');
-        }
-    });
+  a.addEventListener('click', (e) => {
+    e.preventDefault(); // evita recarregar a página, se for <a>
+    exibe_politica = !exibe_politica;
+
+    const politica = document.querySelector('#politica-privacidade');
+    politica.classList.toggle('hidden', !exibe_politica);
+  });
 });
