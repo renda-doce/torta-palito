@@ -10,126 +10,21 @@
   <meta name="description"
     content="Aprenda a fazer Tortas no Palito com Ísis Alvarez — evento gratuito de 3 dias. Entre no grupo do WhatsApp e garanta sua vaga." />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap" rel="stylesheet">
+  <link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700;800&display=swap">
+
   <!-- SwiperJS CDN -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
   <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
-  <link rel="stylesheet" href="./css/temas.css" />
+  <link rel="stylesheet" href="./css/style.css" />
   <link rel="stylesheet" href="./css/botao-whatsapp.css" />
-  <style>
-    :root {
-      --bg: #fff;
-      --surface: #fff;
-      --text: #111827;
-      --muted: #6b7280;
-      --accent: #ec4899;
-      /* pink default */
-      --accent-2: #f97316;
-      --on-accent: #fff;
-      --card-shadow: 0 8px 30px rgba(2, 6, 23, 0.08);
-    }
-
-
-    body {
-      font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
-      background: var(--bg);
-      color: var(--text);
-    }
-
-    /* Buttons with class 'link-group' must stand out */
-    .link-group {
-      display: inline-flex;
-      align-items: center;
-      gap: 0.6rem;
-      padding: 0.75rem 1.05rem;
-      border-radius: 9999px;
-      font-weight: 700;
-      text-decoration: none;
-      box-shadow: var(--card-shadow);
-      border: 1px solid rgba(0, 0, 0, 0.04);
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      color: var(--on-accent);
-      transform: translateZ(0);
-      transition: transform .18s ease, box-shadow .18s ease;
-    }
-
-    .link-group:active {
-      transform: translateY(1px) scale(.997);
-    }
-
-    /* Card style */
-    .card {
-      background: var(--surface);
-      border-radius: 16px;
-      padding: 1.25rem;
-      box-shadow: var(--card-shadow);
-    }
-
-    /* Carousel specific */
-    .carousel-viewport {
-      overflow: hidden;
-      position: relative;
-      padding: 0 1rem;
-    }
-
-    .carousel-track {
-      display: flex;
-      gap: 1rem;
-      padding: 1rem 0;
-      transition: transform .6s cubic-bezier(.22, .9, .36, 1);
-      will-change: transform;
-    }
-
-    .carousel-item {
-      flex: 0 0 auto;
-      border-radius: 12px;
-      overflow: hidden;
-      background: linear-gradient(180deg, rgba(255, 255, 255, 0.02), rgba(0, 0, 0, 0.03));
-    }
-
-    /* small helpers */
-    .muted {
-      color: var(--muted);
-    }
-
-    .accent-underline {
-      background: linear-gradient(90deg, var(--accent), var(--accent-2));
-      -webkit-background-clip: text;
-      background-clip: text;
-      color: transparent;
-    }
-
-    /* Responsive spacing for first fold hero image */
-    .hero-img {
-      max-width: 360px;
-      border-radius: 14px;
-      box-shadow: 0 12px 40px rgba(2, 6, 23, 0.12);
-    }
-
-    /* Accessible focus */
-    .link-group:focus {
-      outline: 3px solid rgba(255, 255, 255, 0.12);
-      outline-offset: 4px;
-    }
-
-    .swiper-button-next::after,
-    .swiper-button-prev::after {
-      content: none !important;
-    }
-
-    /* Small performance tip: reduce repaints with transform for scroll shadows */
-  </style>
 </head>
 
-<body class="theme-pink">
-
-  
-<!-- 🔹 Botão flutuante + texto dica -->
-<!-- 🔹 Botão flutuante + texto de dica -->
+<body>
+<!-- Botão flutuante + texto de dica -->
 <div id="whatsapp-float"
      class="fixed bottom-5 right-5 flex items-center gap-2 transition-opacity duration-700 z-[9999]">
   <div id="whatsapp-hint"
-       class="bg-white text-gray-800 text-sm px-3 py-2 rounded-xl shadow-md max-w-[200px] md:hidden text-right opacity-0 invisible">
+       class="bg-white text-gray-800 text-sm px-3 py-2 rounded-xl shadow-md max-w-[200px] md:hidden text-right">
     Se não conseguir entrar no grupo, fale conosco ▶
   </div>
 
@@ -137,18 +32,10 @@
      target="_blank"
      rel="noopener"
      aria-label="Falar no WhatsApp"
-     class="flex items-center justify-center w-14 h-14 bg-[#42f09a] rounded-full shadow-lg hover:scale-110 transition-transform duration-200 opacity-0 invisible">
+     class="flex items-center justify-center w-14 h-14 bg-[#42f09a] rounded-full shadow-lg hover:scale-110 transition-transform duration-200">
     <img src="./img/whatsapp.svg" alt="WhatsApp" width="34" height="34">
   </a>
 </div>
-
-
-
-  <header class="hidden mx-auto px-6 py-6 flex items-center justify-between">
-    <div class="md:hidden">
-      <button id="themeToggle" title="Trocar tema" class="p-2 card">Tema</button>
-    </div>
-  </header>
 
   <!-- HERO / FIRST FOLD -->
   <section class="max-w-7xl mx-auto p-6 grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
@@ -201,7 +88,7 @@
 
       <aside class="flex flex-col items-center lg:items-end">
         <h3 class="text-3xl font-extrabold mt-8">Com quem você vai aprender?</h3>
-        <img class="h-24 rounded-full sm:mx-0 sm:shrink-0  self-end mt-4" src="./img/Isis-small.png" alt="Isis Alvarez">
+        <img class="h-24 rounded-full sm:mx-0 sm:shrink-0  self-end mt-4" style="border: 3px solid var(--accent-2);" src="./img/Isis-small.png" alt="Isis Alvarez">
 
         <div class="mt-6 text-right max-w-sm">
           
@@ -284,25 +171,24 @@
         ⚠️ Se o botão não funcionar, <a class="link-direto" style="color: var(--accent)"><strong>clique aqui para falar direto conosco</strong></a></p>
   </section>
 
-  <footer class="max-w-6xl mx-auto px-6 py-10 muted text-sm text-center">© <span id="year"></span> Renda Doce • <a href="#politica-privacidade" id="link-politica-privacidade">Política de Privacidade</a></footer>
+  <footer class="link-politica-privacidade max-w-6xl mx-auto px-6 py-10 muted text-sm text-center">© <span id="year"></span> Renda Doce • <a href="#politica-privacidade">Política de Privacidade</a></footer>
   <div class="hidden text-sm muted text-justify p-6" id="politica-privacidade">
       Este site não é afiliado ao Facebook ou a qualquer entidade do Facebook. Depois que você sair do Facebook, 
       a responsabilidade não é deles e sim do nosso site. Fazemos todos os esforços para indicar claramente e 
       mostrar todas as provas do produto e usamos resultados reais. Nós não vendemos o seu e-mail ou qualquer 
       informação para terceiros. Jamais fazemos nenhum tipo de spam. Se você tiver alguma dúvida, sinta-se à 
       vontade para usar o link de contato e falar conosco em horário comercial de Segunda a Sextas das 09h00 ás 
-      19h00. Lemos e respondemos todas as mensagens por ordem de chegada.
+      19h00. Lemos e respondemos todas as mensagens por ordem de chegada.<br>
+      <span class="link-politica-privacidade"><strong>Fechar</strong></span>
   </div>
-  <!-- Placeholder anchor for whats link -->
-  <div id="whats" style="display:none"></div>
+  <div class="mb-12"></div>
 
   <script>
     // set year
     document.getElementById('year').textContent = new Date().getFullYear();
   </script>
   <script src="./js/carousel.js"></script>
-  <script src="./js/seletor-de-tema.js"></script>
-  <script src="./js/botao-whatsapp.js"></script>
+  <script src="./js/links-whatsapp.js"></script>
 </body>
 
 </html>

@@ -19,5 +19,3 @@ document.addEventListener('DOMContentLoaded', function () {
     },
   });
 });
-// Accessibility: make carousel items focusable
-    document.querySelectorAll('.carousel-item').forEach((it, i) => { it.setAttribute('tabindex', '0'); });

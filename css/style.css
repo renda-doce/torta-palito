@@ -1,0 +1,74 @@
+:root {
+    --bg: #fff;
+    --surface: #fff;
+    --text: #111827;
+    --muted: #6b7280;
+    --accent: #ec4899;
+    /* pink default */
+    --accent-2: #f97316;
+    --on-accent: #fff;
+    --card-shadow: 0 8px 30px rgba(2, 6, 23, 0.08);
+}
+
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* Buttons with class 'link-group' must stand out */
+.link-group {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.6rem;
+    padding: 0.75rem 1.05rem;
+    border-radius: 9999px;
+    font-weight: 700;
+    text-decoration: none;
+    box-shadow: var(--card-shadow);
+    border: 1px solid rgba(0, 0, 0, 0.04);
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    color: var(--on-accent);
+    transform: translateZ(0);
+    transition: transform .18s ease, box-shadow .18s ease;
+}
+
+.link-group:active {
+    transform: translateY(1px) scale(.997);
+}
+
+/* Card style */
+.card {
+    background: var(--surface);
+    border-radius: 16px;
+    padding: 1.25rem;
+    box-shadow: var(--card-shadow);
+}
+
+/* small helpers */
+.muted {
+    color: var(--muted);
+}
+
+.accent-underline {
+    background: linear-gradient(90deg, var(--accent), var(--accent-2));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+}
+
+
+.swiper-button-next::after,
+.swiper-button-prev::after {
+    content: none !important;
+}
+
+
+#whatsapp-hint {
+  animation: fadeIn 0.6s ease 5s forwards, fadeOut 0.6s ease 12s forwards;
+}
+
+#whatsapp-btn {
+  animation: fadeIn 0.6s ease 5s forwards;
+}
