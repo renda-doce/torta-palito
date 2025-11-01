@@ -13,27 +13,27 @@ document.querySelectorAll('.link-group').forEach(a => {
   a.setAttribute("target", "_blank");
   a.setAttribute("rel", "noopener noreferrer");
 
-  // Listener do evento
-  a.addEventListener("click", function () {
-    // Evita duplicação de evento
-    if (!this.dataset.pixelSent) {
+  // // Listener do evento
+  // a.addEventListener("click", function () {
+  //   // Evita duplicação de evento
+  //   if (!this.dataset.pixelSent) {
 
-      // Monta descrição segura e padronizada
-      const botao_id = this.id ? this.id : 'sem-id';
+  //     // Monta descrição segura e padronizada
+  //     const botao_id = this.id ? this.id : 'sem-id';
 
-      fbq('track', 'Lead', {
-        content_name: `Lead - Torta Palito`,
-        content_id: botao_id,
-        value: 2.00,
-        currency: 'BRL',
-        event_source: window.location.origin,
-        page_path: window.location.pathname,
-      });
+  //     fbq('track', 'Lead', {
+  //       content_name: `Lead - Torta Palito`,
+  //       content_id: botao_id,
+  //       value: 2.00,
+  //       currency: 'BRL',
+  //       event_source: window.location.origin,
+  //       page_path: window.location.pathname,
+  //     });
 
-      this.dataset.pixelSent = "true";
-      console.log("✅ Evento Meta Pixel 'Lead' enviado com sucesso.");
-    }
-  });
+  //     this.dataset.pixelSent = "true";
+  //     console.log("✅ Evento Meta Pixel 'Lead' enviado com sucesso.");
+  //   }
+  // });
 });
 
 
