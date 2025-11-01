@@ -109,8 +109,7 @@ document.querySelectorAll('.link-group').forEach(a => {
                 content_name: `Lead - Torta Palito`,
                 content_id: botao_id,
                 value: 0.00,
-                currency: 'BRL',
-                test_event_code: 'TEST694'
+                currency: 'BRL'
             },
             
           );
