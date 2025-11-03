@@ -1,6 +1,6 @@
 // Example: replace '#' with your WhatsApp link (with phone & prefilled message)
 const link_grupo = 'https://mais.red/wpp/SEMANA_TORTA_PALITO';
-const link_direto = 'https://wa.me/5511951190867?text=Ol%C3%A1!%20%0AN%C3%A3o%20estou%20conseguindo%20entrar%20no%20grupo%20do%20evento%20tortas%20no%20palito.%20%0APode%20me%20adicionar%3F';
+const link_direto = 'https://wa.me/5511951192135?text=Ol%C3%A1!%20%0AN%C3%A3o%20estou%20conseguindo%20entrar%20no%20grupo%20do%20evento%20tortas%20no%20palito.%20%0APode%20me%20adicionar%3F';
 
 
 
