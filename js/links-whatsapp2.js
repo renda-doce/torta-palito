@@ -22,7 +22,8 @@ function abrirWhatsAppFallback() {
 
   // 1. Deep link nativo (primeira tentativa)
   if (isMobile()) {
-    window.location.href = `whatsapp://send?text=${encodeURIComponent(waStandard)}`;
+    // tentar abrir o grupo direto no WhatsApp
+    window.location.href = `whatsapp://chat?link=${encodeURIComponent(waStandard)}`;
 
     setTimeout(() => {
       // 2. Intent para forçar app no Instagram / Android
