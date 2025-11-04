@@ -47,17 +47,13 @@ function abrirWhatsAppFallback() {
               <div style="background:#fff; color:#222; padding:20px; border-radius:12px; max-width:320px;">
                 <h3 style="font-size:18px; font-weight:bold;">Não conseguiu abrir o WhatsApp?</h3>
                 <p style="margin-top:10px; font-size:15px;">
-                  Toque abaixo para entrar no grupo:
+                  Toque abaixo para entrar em contato:
                 </p>
-                <a href="${waStandard}" 
+                <a href="${link_direto}" 
                    style="background:#25D366; display:block; padding:12px; margin-top:10px;
                           border-radius:8px; color:#fff; font-weight:bold;">
                   Abrir WhatsApp
                 </a>
-                <p style="margin-top:12px; font-size:13px;">Ou escaneie com a câmera:</p>
-                <img src="https://api.qrserver.com/v1/create-qr-code/?size=180x180&data=${encodeURIComponent(waStandard)}"
-                     alt="QR WhatsApp" style="margin:10px auto; display:block;">
-              </div>
             </div>
           `;
           document.body.appendChild(aviso);
